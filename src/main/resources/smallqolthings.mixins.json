@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "package": "technicfan.smallqolthings.mixins",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "AccessibilityOptionsScreenMixin",
+        "HumanoidMobRendererMixin",
+        "MinecartMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
