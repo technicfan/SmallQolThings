@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.entity.vehicle.Minecart;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseRailBlock;
@@ -12,10 +13,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.RailShape;
 
 @Mixin(Minecart.class)
-public class MinecartMixin {
+public abstract class MinecartMixin extends AbstractMinecart {
     private boolean useExperimentalMovement;
     private boolean potentialWrongDir;
     private boolean corrected;
+
+    private MinecartMixin() {
+        super(null, null);
+    }
 
     @Redirect(
         method = "positionRider",
@@ -42,18 +47,17 @@ public class MinecartMixin {
             // for some reason it's `+` instead of `-`
             // with the old movement
             yRot = 2 * player.getYRot() - yRot;
-            Minecart thiz = (Minecart) (Object) this;
             if (!corrected) {
                 // with the old movement all minecarts have an initial y rotation of 0
-                if (thiz.getYRot() == 0) {
+                if (this.getYRot() == 0) {
                     // that changes when the minecart moves
-                    BlockState blockState = thiz.level().getBlockState(thiz.blockPosition());
+                    BlockState blockState = this.level().getBlockState(this.blockPosition());
                     if (blockState.getBlock() instanceof BaseRailBlock rail) {
                         // when it's on the north south axis it changes to 90 or -90
                         // depending on the direction
                         if ((RailShape) blockState.getValue(rail.getShapeProperty()) == RailShape.NORTH_SOUTH) {
                             // i picked -90 as a guess ^^
-                            thiz.setYRot(-90);
+                            this.setYRot(-90);
                             potentialWrongDir = true;
                         }
                         // if it's on the east west axis it stays 0 so everything is fine
