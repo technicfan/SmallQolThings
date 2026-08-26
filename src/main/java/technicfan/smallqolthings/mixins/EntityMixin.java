@@ -13,9 +13,6 @@ public abstract class EntityMixin {
     @Shadow
     private boolean wasTouchingWater;
 
-    @Shadow
-    public abstract void clearFire();
-
     @Inject(method = "fireImmune", at = @At("HEAD"), cancellable = true)
     private void dontBurnInWater(CallbackInfoReturnable<Boolean> cir) {
         if (wasTouchingWater) cir.setReturnValue(true);
