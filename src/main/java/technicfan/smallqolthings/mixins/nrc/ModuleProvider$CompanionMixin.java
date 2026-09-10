@@ -23,7 +23,9 @@ public class ModuleProvider$CompanionMixin {
         "EmoteWheelModule",
         "McRealModule",
         "FriendsModule",
-        "ProfilesModule"
+        "ProfilesModule",
+        "WheelModule",
+        "PingsModule"
     ));
 
     @Inject(method = "register(Lgg/norisk/ui/api/module/Module;)V", at = @At("HEAD"), cancellable = true)
