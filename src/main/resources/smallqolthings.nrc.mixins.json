@@ -11,7 +11,8 @@
         "ServerStylingManagerMixin",
         "TitleScreenCosmeticsOverlayMixin",
         "ClientBootstrap$CompanionMixin",
-        "PromotedServerVisibilityMixin"
+        "PromotedServerVisibilityMixin",
+        "VoiceChatBootstrapMixin"
     ],
     "injectors": {
         "defaultRequire": 1
