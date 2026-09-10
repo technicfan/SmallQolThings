@@ -1,0 +1,19 @@
+{
+    "required": true,
+    "package": "technicfan.smallqolthings.mixins.nrc",
+    "compatibilityLevel": "JAVA_25",
+    "mixins": [
+        "DirectoryLinkManagerMixin",
+        "ModuleProvider$CompanionMixin",
+        "NrcKeybindsLayerMixin",
+        "NrcReflectionUtilMixin",
+        "RightShiftMenuV3ScreenMixin",
+        "ServerStylingManagerMixin",
+        "TitleScreenCosmeticsOverlayMixin",
+        "ClientBootstrap$CompanionMixin",
+        "PromotedServerVisibilityMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

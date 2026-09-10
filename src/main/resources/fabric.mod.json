@@ -7,7 +7,7 @@
     "authors": ["technicfan"],
     "license": "MIT",
     "environment": "client",
-    "mixins": ["smallqolthings.mixins.json"],
+    "mixins": ["smallqolthings.mixins.json", "smallqolthings.nrc.mixins.json"],
     "depends": {
         "fabricloader": ">=${loader}",
         "minecraft": ">=${minecraft}"
