@@ -31,6 +31,7 @@ public class ModuleProvider$CompanionMixin {
     @Inject(method = "register(Lgg/norisk/ui/api/module/Module;)V", at = @At("HEAD"), cancellable = true)
     private void disableModule(Module module, CallbackInfo ci) {
         if (module == null || !allowedModules.contains(module.getClass().getSimpleName())) {
+            module.setEnabled(false);
             ci.cancel();
         }
     }
