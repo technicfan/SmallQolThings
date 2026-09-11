@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import gg.norisk.compat.reflection.NrcReflectionUtil;
+import technicfan.smallqolthings.SmallQolThings;
 
 @Mixin(NrcReflectionUtil.class)
 public class NrcReflectionUtilMixin {
@@ -21,6 +22,7 @@ public class NrcReflectionUtilMixin {
     private static void cancelInit(String clazz, String method, CallbackInfo ci) {
         if (method != null && method.startsWith("init")) {
             if (!allowedInits.contains(clazz)) {
+                SmallQolThings.info("Prevented " + method + "() of " + clazz.replaceAll(".*\\.", ""));
                 ci.cancel();
             }
         }

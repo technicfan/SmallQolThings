@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import gg.norisk.ui.api.module.Module;
 import gg.norisk.ui.modules.api.ModuleProvider;
+import technicfan.smallqolthings.SmallQolThings;
 
 @Mixin(ModuleProvider.Companion.class)
 public class ModuleProvider$CompanionMixin {
@@ -25,12 +26,16 @@ public class ModuleProvider$CompanionMixin {
         "FriendsModule",
         "ProfilesModule",
         "WheelModule",
-        "PingsModule"
+        "PingsModule",
+        "TetrisModule",
+        "PongModule"
     ));
 
     @Inject(method = "register(Lgg/norisk/ui/api/module/Module;)V", at = @At("HEAD"), cancellable = true)
     private void disableModule(Module module, CallbackInfo ci) {
-        if (module == null || !allowedModules.contains(module.getClass().getSimpleName())) {
+        if (module == null) return;
+        if (!allowedModules.contains(module.getClass().getSimpleName())) {
+            SmallQolThings.info("Disabled " + module.getName());
             module.setEnabled(false);
             ci.cancel();
         }
