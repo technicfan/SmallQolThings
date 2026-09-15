@@ -11,12 +11,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import technicfan.smallqolthings.SmallQolThings;
 
 @Mixin(HumanoidMobRenderer.class)
 public abstract class HumanoidMobRendererMixin {
     @Inject(method = "getEquipmentIfRenderable", at = @At("RETURN"), cancellable = true)
     private static void hideArmor(LivingEntity entity, EquipmentSlot slot, CallbackInfoReturnable<ItemStack> cir) {
-        if (entity instanceof Player && slot.isArmor() && !cir.getReturnValue().is(Items.ELYTRA)) {
+        if (!SmallQolThings.getShowArmor() && entity instanceof Player && slot.isArmor() && !cir.getReturnValue().is(Items.ELYTRA)) {
             cir.setReturnValue(ItemStack.EMPTY);
         }
     }

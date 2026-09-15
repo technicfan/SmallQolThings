@@ -2,14 +2,18 @@
     "schemaVersion": 1,
     "id": "smallqolthings",
     "version": "${version}",
-    "name": "Small QOL things",
+    "name": "Small QOL Things",
     "description": "Just some small QOL things",
     "authors": ["technicfan"],
     "license": "MIT",
     "environment": "client",
+    "entrypoints": {
+        "client": ["technicfan.smallqolthings.SmallQolThings"]
+    },
     "mixins": ["smallqolthings.mixins.json", "smallqolthings.nrc.mixins.json"],
     "depends": {
         "fabricloader": ">=${loader}",
+        "fabric-api": "*",
         "minecraft": ">=${minecraft}"
     }
 }
