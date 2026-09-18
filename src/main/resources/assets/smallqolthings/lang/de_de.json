@@ -1,4 +1,5 @@
 {
     "key.category.smallqolthings.smallqolthings": "Small QOL Things",
-    "smallqolthings.key.toggle_armor": "Rüstung umschalten"
+    "smallqolthings.key.toggle_armor.own": "Eigene Rüstung umschalten",
+    "smallqolthings.key.toggle_armor.others": "Rüstung anderer umschalten"
 }

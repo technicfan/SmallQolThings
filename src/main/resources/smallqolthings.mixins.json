@@ -3,10 +3,10 @@
     "package": "technicfan.smallqolthings.mixins",
     "compatibilityLevel": "JAVA_25",
     "mixins": [
-        "AccessibilityOptionsScreenMixin",
         "EntityMixin",
         "HumanoidMobRendererMixin",
-        "MinecartMixin"
+        "MinecraftMixin",
+        "ClientSuggestionProviderMixin"
     ],
     "injectors": {
         "defaultRequire": 1

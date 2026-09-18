@@ -1,4 +1,5 @@
 {
     "key.category.smallqolthings.smallqolthings": "Small QOL Things",
-    "smallqolthings.key.toggle_armor": "Toggle armor rendering"
+    "smallqolthings.key.toggle_armor.own": "Toggle own armor rendering",
+    "smallqolthings.key.toggle_armor.others": "Toggle others armor rendering"
 }

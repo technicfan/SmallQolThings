@@ -17,8 +17,10 @@ import technicfan.smallqolthings.SmallQolThings;
 public abstract class HumanoidMobRendererMixin {
     @Inject(method = "getEquipmentIfRenderable", at = @At("RETURN"), cancellable = true)
     private static void hideArmor(LivingEntity entity, EquipmentSlot slot, CallbackInfoReturnable<ItemStack> cir) {
-        if (!SmallQolThings.getShowArmor() && entity instanceof Player && slot.isArmor() && !cir.getReturnValue().is(Items.ELYTRA)) {
-            cir.setReturnValue(ItemStack.EMPTY);
+        if (entity instanceof Player player) {
+            if (SmallQolThings.hideArmor(player) && slot.isArmor() && !cir.getReturnValue().is(Items.ELYTRA)) {
+                cir.setReturnValue(ItemStack.EMPTY);
+            }
         }
     }
 }
