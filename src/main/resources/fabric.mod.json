@@ -10,7 +10,7 @@
     "entrypoints": {
         "client": ["technicfan.smallqolthings.SmallQolThings"]
     },
-    "mixins": ["smallqolthings.mixins.json"],
+    "mixins": ["smallqolthings.mixins.json", "smallqolthings.nrc.mixins.json"],
     "depends": {
         "fabricloader": ">=${loader}",
         "fabric-api": "*",

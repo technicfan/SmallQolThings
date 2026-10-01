@@ -12,7 +12,9 @@
         "TitleScreenCosmeticsOverlayMixin",
         "ClientBootstrap$CompanionMixin",
         "PromotedServerVisibilityMixin",
-        "VoiceChatBootstrapMixin"
+        "VoiceChatBootstrapMixin",
+        "NrcOverlayRendererMixin",
+        "RowHelperMixin"
     ],
     "injectors": {
         "defaultRequire": 1
