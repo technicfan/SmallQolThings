@@ -14,7 +14,8 @@
         "PromotedServerVisibilityMixin",
         "VoiceChatBootstrapMixin",
         "NrcOverlayRendererMixin",
-        "RowHelperMixin"
+        "RowHelperMixin",
+        "BrandingOverlayMixin"
     ],
     "injectors": {
         "defaultRequire": 1
