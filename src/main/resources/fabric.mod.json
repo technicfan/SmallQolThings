@@ -8,6 +8,7 @@
     "license": "MIT",
     "environment": "client",
     "entrypoints": {
+        "preLaunch": ["technicfan.smallqolthings.SmallQolThings"],
         "client": ["technicfan.smallqolthings.SmallQolThings"]
     },
     "mixins": ["smallqolthings.mixins.json", "smallqolthings.nrc.mixins.json"],

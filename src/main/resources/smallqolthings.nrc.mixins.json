@@ -2,6 +2,7 @@
     "required": true,
     "package": "technicfan.smallqolthings.mixins.nrc",
     "compatibilityLevel": "JAVA_25",
+    "plugin": "technicfan.smallqolthings.MixinPlugin",
     "mixins": [
         "DirectoryLinkManagerMixin",
         "ModuleProvider$CompanionMixin",
@@ -15,7 +16,9 @@
         "VoiceChatBootstrapMixin",
         "NrcOverlayRendererMixin",
         "RowHelperMixin",
-        "BrandingOverlayMixin"
+        "BrandingOverlayMixin",
+        "WorldOptionsScreenMixin",
+        "CreatorCodeDashboardMixin"
     ],
     "injectors": {
         "defaultRequire": 1
