@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import gg.norisk.compat.util.DirectoryLinkManager;
+import gg.norisk.abstraction.util.DirectoryLinkManager;
 
 @Mixin(DirectoryLinkManager.class)
 public class DirectoryLinkManagerMixin {

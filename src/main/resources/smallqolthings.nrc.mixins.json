@@ -18,7 +18,8 @@
         "RowHelperMixin",
         "BrandingOverlayMixin",
         "WorldOptionsScreenMixin",
-        "CreatorCodeDashboardMixin"
+        "CreatorCodeDashboardMixin",
+        "BuddyRendererMixin"
     ],
     "injectors": {
         "defaultRequire": 1
